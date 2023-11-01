@@ -45,9 +45,9 @@ public class FileStreams_Lesson1 {
 
         String fileName = "file1";
         File file = new File("./" + fileName);
-        System.out.println("Before file creation: " + file.exists());
-        init(file);
-        System.out.println("After file creation: " + file.exists());
+        System.out.println("File only point to a file object and does not create the physical file, File exists: " + file.exists());
+        file.createNewFile();
+        System.out.println("File exists: " + file.exists());
         return file;
 
     }
@@ -57,10 +57,5 @@ public class FileStreams_Lesson1 {
             System.out.println("Cleanup Successful");
     }
 
-    /*
-    * Creates a new File with the file object
-    * */
-    private static void init(File file) throws IOException {
-        file.createNewFile();
-    }
+   
 }
